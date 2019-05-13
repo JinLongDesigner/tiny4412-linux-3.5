@@ -1,0 +1,12 @@
+操作VirtualDisk之前要做下面步骤:
+1. 首先查看VirtualDisk的设备号
+cat /proc/device
+
+2.手动创建设备节点
+mknod /dev/xxx 设备类型 主设备号  次设备号
+
+/dev/xxx : 设备名称
+
+设备类型:
+c : 字符设备
+d : 块设备
