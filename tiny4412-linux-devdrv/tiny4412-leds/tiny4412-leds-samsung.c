@@ -54,7 +54,6 @@ struct leddev
 struct leddev * tiny4412_leds;
 
 /*************硬件相关*********************/
-/*
 void exynos4412_leds_init(struct leddev * leddev)
 {
 	leddev->LEDCON = readl(leddev->peripdev + 0x2e0);
@@ -98,7 +97,7 @@ int exynos4412_leds_off(struct leddev * leddev, int num)
 	leddev->LEDCON |= (1 << num);
 	writel(leddev->LEDCON, leddev->peripdev + 0x2e4);
 	return 0;
-}*/
+}
 /*************硬件相关*********************/
 
 /*************硬件无相关*********************/

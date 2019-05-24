@@ -23,7 +23,6 @@ static __exit void hello_exit()
 #define KERN_NOTICE	"<5>"	// normal but significant condition	
 #define KERN_INFO	"<6>"	// informational		
 #define KERN_DEBUG	"<7>"	// debug-level messages			
-
 */
 	printk(KERN_ALERT "Goodbye, world\n");	
 }
