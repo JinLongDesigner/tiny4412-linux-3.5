@@ -1,10 +1,10 @@
-KERN_DIR = /home/me/work/tiny4412/tiny4412-linux-3.5
-
-all:
-	make -C $(KERN_DIR) M=`pwd` modules 
-
+ifneq ($(KERNELRELEASE),)
+obj-m := virtualserial05.o
+else
+KERNELDIR := /work/RK3399/rk3399_linux/kernel
+PWD := $(shell pwd)
+modules:
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+endif
 clean:
-	make -C $(KERN_DIR) M=`pwd` modules clean
-	rm -rf modules.order
-
-obj-m   += virtualserial03.o
+	rm -rf *.o *~ core .depend .*.cmd *.ko *.mod.c .tmp_versions *.order *.symvers
